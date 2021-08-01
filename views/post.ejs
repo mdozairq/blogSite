@@ -10,7 +10,7 @@
                             <span class="meta">
                                 Posted by
                                 <a href="#!"><%= name %></a>
-                                on <%= date %>
+                                on <%= date.toLocaleDateString("en-US", {day: "numeric",month: "long",year: "numeric"}) %>
                             </span>
                         </div>
                     </div>
@@ -27,4 +27,9 @@
                 </div>
             </div>
         </article>
+        <div class="container px-4 px-lg-5">
+            <a href="/edit/<%= id %>" name="edit">Edit</a> .
+            <a href="/<%= id %>" name="edit">Delete</a> . 
+            <a href="/next/<%= id %>" name="Next">Next</a>
+        </div>
 <%- include('footer') -%>
