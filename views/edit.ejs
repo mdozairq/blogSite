@@ -1,22 +1,22 @@
 <%- include('header'); -%>
-<h1>Edit Post </h1>
+<header class="masthead" style="background-image: url('/assets/img/edit-bg.jpg')">
+  <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+              <div class="page-heading">
+                  <h1>Edit</h1>
+                  <span class="subheading">Edit your Blogs</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
 <main class="mb-4">
     <div class="container px-4 px-lg-5">
       <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
               <div class="my-5">
-                  <form class="" action="/posts/edit/<%= post._id %>?_method=PUT" method="POST">
-                      <div class="form-floating">
-                          <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" name="composerName" value="<%= post.name %>"/>
-                          <label for="name">Name</label>
-                          <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                      </div>
-                      <div class="form-floating">
-                          <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" name="composerEmail" value="<%= post.email %>"/>
-                          <label for="email">Email address</label>
-                          <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                      </div>
+                  <form class="" action="/update/<%=user.name %>/<%= post._id %>?_method=PUT" method="POST">
                       <div class="form-floating">
                             <input id="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Post-title" name="postTitle" value="<%= post.title %>">
                             <label id="name" class="form-control">Post Title</label>

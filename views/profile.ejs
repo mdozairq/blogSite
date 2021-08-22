@@ -1,0 +1,51 @@
+<%- include('header'); -%>
+
+<header class="masthead" style="background-image: url('/assets/img/profile-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Profile</h1>
+                            <span class="subheading">Blogger Details</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  </header>
+  <div class="card">
+    <div class="card-header">
+      Featuring <%= user.name %>
+    </div>
+    <div class="card-body">
+      <p>Name: <%= user.name %></p>
+      <p>Phone: <%= user.phone %></p>
+      <p>Email: <%= user.email %></p>
+      <p>Created on: <%= user.date %></p> 
+    </div>
+  </div>
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Post preview-->
+            <h1><%= user.name %> Blogs :</h1>
+            <% posts.forEach(function(post){ %>
+            <div class="post-preview">
+                <a href="/<%=user.name %>/<%=post._id %>"><h2 class="post-title"><%= post.title %></h2>
+                <h3 class="post-subtitle"><%- post.content.substring(0,100) -%></h3>
+                </a>
+                <p class="post-meta">
+                    Posted by
+                    <a href="https://<%= post.email %>"><%= post.name %></a>
+                    <%= post.createdAt.toLocaleDateString("en-US", {day: "numeric",month: "long",year: "numeric"}) %>
+                </p>
+            </div>
+            <% }); %>
+            <!-- Divider-->
+                <hr class="my-4" />
+            <!-- Pager-->
+            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="/compose">Compose More →</a></div>
+        </div>
+    </div>
+</div>
+ 
+  <%- include('footer'); -%>

@@ -1,0 +1,55 @@
+<%- include('homeHeader'); -%>
+
+ <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/contact-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Login</h1>
+                            <span class="subheading">Don't have an account? <a href="/register">Create One</a>
+                        </div></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content-->
+            <div class="login_wrapper">
+              <div class="row">
+                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"> <a href="/login" class="btn btn-primary facebook"> <span>Login with Facebook</span> <i class="fa fa-facebook"></i> </a> </div>
+                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"> <a href="/register" class="btn btn-primary google-plus"> Login with Google <i class="fa fa-google-plus"></i> </a> </div>
+                    </div>
+                </div>
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="my-5">
+                            <!-- to get an API token!-->
+                            <%- include('messages') %> 
+                            <form id="contactForm" action="/login" method="POST">
+                                <div class="form-floating">
+                                    <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" name="email"/>
+                                    <label for="email">Email address</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="password" type="password" placeholder="Create your password..." data-sb-validations="required,password" name="password"/>
+                                    <label for="email">Password</label>
+                                    <div class="invalid-feedback" data-sb-feedback="password:required">An password is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="password:password">Password must be equal or greater than 8 characters.</div>
+                                </div>
+                                <br />
+                                
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+<%- include('footer') -%>

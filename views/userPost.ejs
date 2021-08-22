@@ -1,4 +1,4 @@
-<%- include('homeHeader'); -%>
+<%- include('header'); -%>
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('/assets/img/post-bg.jpg')">
             <div class="container position-relative px-4 px-lg-5">
@@ -9,7 +9,7 @@
                             <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
                             <span class="meta">
                                 Posted by
-                                <a href="#!"><%= name %></a>
+                                <a href="#!"><%= user.name %></a>
                                 on <%= date.toLocaleDateString("en-US", {day: "numeric",month: "long",year: "numeric"}) %>
                             </span>
                         </div>
@@ -27,4 +27,9 @@
                 </div>
             </div>
         </article>
+        <div class="container px-4 px-lg-5">
+            <a href="/edit/<%= user.name %>/<%= id %>" name="edit">Edit</a> .
+            <a href="/<%= id %>" name="edit">Delete</a> . 
+            <a href="/next/<%= id %>" name="Next">Next</a>
+        </div>
 <%- include('footer') -%>

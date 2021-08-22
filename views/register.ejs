@@ -1,0 +1,62 @@
+<%- include('homeHeader'); -%>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/contact-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Register</h1>
+                            <span class="subheading">Already have An Account? <a href="/login">Login Here.<a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="my-5">
+                            <!-- to get an API token!-->
+                            <%- include('messages') %> 
+                            <form id="contactForm" action="/register" method="POST">
+                                <div class="form-floating">
+                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" name="name"/>
+                                    <label for="name">Name</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" name="email"/>
+                                    <label for="email">Email address</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." data-sb-validations="required" name="phone"/>
+                                    <label for="phone">Phone Number</label>
+                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="password1" type="password" placeholder="Create your password..." data-sb-validations="required,password" name="password1"/>
+                                    <label for="email">Password</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">An password is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="password:password">Password must be equal or greater than 8 characters.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="confirmPassword" type="password" placeholder="Enter same password to confirm..." data-sb-validations="required,password" name="password"/>
+                                    <label for="email"> Confirm Password</label>
+                                    <div class="invalid-feedback" data-sb-feedback="password:required">An email is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="newPassword:password">Password is not equal.</div>
+                                </div>
+                                <br />
+                                
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary text-uppercase " id="submitButton" type="submit">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+<%- include('footer') -%>
