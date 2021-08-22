@@ -18,7 +18,7 @@ const app = express();
 require('./config/passport')(passport);
 
 app.set('view engine', 'ejs');
-mongoose.connect("mongodb+srv://admin-ozair:2424907@Moq@cluster0.mcvc4.mongodb.net/blogDB", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
+mongoose.connect("mongodb+srv://admin-ozair:process.env.MONGO_PASSWORD@cluster0.mcvc4.mongodb.net/blogDB", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
